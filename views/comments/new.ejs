@@ -1,0 +1,17 @@
+<%- include("../partials/header.ejs"); -%> 
+
+<div class="container" style="width: 40%;">
+        <h1 class="text-center" >Create a New Comment to <%= campground.name %></h1>
+
+        <form  method="POST" action="/campgrounds/<%= campground._id %>/comments">
+            <p>From <strong><%= current_user.username %> </strong></p>
+            <div class="form-group">
+                <label for="text">Text</label>
+                <input class="form-control" type="text" name="comment[text]" placeholder="your comment" id="text">
+            </div>
+            <button class="btn btn-md btn-outline-primary btn-block" type="submit">Submit it!</button>
+        </form>
+
+        <a class="btn btn-md btn-outline-dark btn-block my-2" href="/campgrounds/<%= campground._id %>">Go Back!</a>
+</div>
+<%- include("../partials/footer.ejs"); -%> 
